@@ -24,7 +24,7 @@ Lag Autodesk-konto og få credentials. Lag en ny app i ... TODO: Torjus: Fyll in
 
 Installer <b>NodeJS</b> og <b>Git Bash for Windows</b>. Åpne Git Bash som administrator og kjør kommandoen <b>node -v</b> for å sjekke versjonsnummeret til NodeJS. Kjør deretter <b>npm -v</b> for å sjekke versjonsnummeret til package manageren. Dersom den er mindre enn 4.0.2 kan du kjøre <b>npm install npm@latest -g</b> for å få siste versjon.
 
-Åpne Git Bash og naviger til ditt ønskede lokale workspace, for eks: <b>C:\Workspace\</b>. Kjør kommandoen under for å lage lokal kopi av Github-repositoryet: 
+Åpne Git Bash og naviger til ditt ønskede lokale workspace, for eks: <b>C:\Workspace</b>. Kjør kommandoen under for å lage lokal kopi av Github-repositoryet: 
 
     git clone https://github.com/torjuss/isyviewer.git
 
