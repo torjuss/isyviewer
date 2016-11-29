@@ -48,7 +48,7 @@ router.get('/user/logoff', function (req, res) {
 // the forge @me endpoint returns more information
 router.get('/user/profile', function (req, res) {
   var tokenSession = new token(req.session);
-  forgeOAuth2.ApiClient.instance.authentications ['oauth2_access_code'].accessToken = tokenSession.getTokenInternal();
+  forgeOAuth2.ApiClient.instance.authentications['oauth2_access_code'].accessToken = tokenSession.getTokenInternal();
   var oa3Info = new forgeOAuth2.InformationalApi();
   oa3Info.aboutMe()
     .then(function (data) {
