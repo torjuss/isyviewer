@@ -16,15 +16,30 @@
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
 
-'use strict';
+'use strict'; // http://www.w3schools.com/js/js_strict.asp
 
-var app = require('./server/server');
+function Token(session) {
+  this._session = session;
+}
 
-// start server
-var server = app.listen(app.get('port'), function () {
-  if (process.env.FORGE_CLIENT_ID == null || process.env.FORGE_CLIENT_SECRET == null)
-    console.log('*****************\nWARNING: Forge Client ID & Client Secret not defined as environment variables.\n*****************');
+Token.prototype.getTokenInternal = function () {
+  return this._session.tokeninternal;
+};
 
-  console.log('Starting at ' + (new Date()).toString());
-  console.log('Server listening on port ' + server.address().port);
-});
+Token.prototype.setTokenInternal = function (token) {
+  this._session.tokeninternal = token;
+};
+
+Token.prototype.getTokenPublic = function () {
+  return this._session.tokenpublic;
+};
+
+Token.prototype.setTokenPublic = function (token) {
+  this._session.tokenpublic = token;
+};
+
+Token.prototype.isAuthorized = function () {
+  return (this._session.tokenpublic != null);
+};
+
+module.exports = Token;
